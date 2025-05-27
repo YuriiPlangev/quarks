@@ -1,0 +1,44 @@
+
+@import "tailwindcss";
+
+:root {
+  font-size: 2.66vw;
+  font-family: Nunito, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  min-height: 100vh;
+
+  color-scheme: light dark;
+  color: #111111;
+  background-color: #FAF9FF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (min-width: 480px) {
+  :root {
+    font-size: 15px;
+  }
+}
+body {
+
+  min-width: 375px;
+  min-height: 100vh;
+}
+
+@theme {
+  --color-primary: #111111;
+  --color-secondary: #31728D ;
+  --color-tertiary: #666666;
+  --breakpoint-xs: 480px;
+}
+
+
+button {
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit; 
+  cursor: pointer;
+}
