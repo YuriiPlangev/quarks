@@ -39,7 +39,7 @@ const handleCheck = (e) => {
     <main className='py-[2rem] flex flex-col min-h-screen'>
       <header className='mb-10'>
         <div className='w-full p-1 rounded-[10px] bg-[#E8E6EF] mb-5 relative'>
-        <div className={`absolute h-full top-0 left-0 bg-[#31728D]`} style={{ width: `${width}%`, transition: 'width 0.5s ease-in-out' }}>
+        <div className={`absolute h-full top-0 left-0 bg-[#31728D] rounded-[10px]`} style={{ width: `${width}%`, transition: 'width 0.5s ease-in-out' }}>
         </div>
       </div>
       <div className='flex items-center justify-between'>
