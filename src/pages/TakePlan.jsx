@@ -44,7 +44,7 @@ const TakePlan = () => {
         <div className='w-full'>
           {
           planData.map((item, index) => (
-            <ProgressBar sBar key={item.id} title={item.title} modal={item.modal} isActive={index === active} onDone={handleNext} />
+            <ProgressBar key={item.id} title={item.title} modal={item.modal} isActive={index === active} onDone={handleNext} />
           ))
         }
         </div>

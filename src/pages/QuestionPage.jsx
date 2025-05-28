@@ -18,12 +18,11 @@ const [checkedCount, setCheckedCount] = React.useState(0);
 
 
 const handleNext = () => {
-  if (activeQuestion <= questions.length - 1) {
+  if (activeQuestion < questions.length - 1) {
     setActiveQuestion(prev => prev + 1);
     setWidth(prev => prev + (100 / questions.length));
     setCheckedCount(0);
-  }
-  if (activeQuestion === questions.length - 1) {
+  } else {
     navigate("/results");
   }
 }
@@ -44,7 +43,7 @@ const handleCheck = (e) => {
         </div>
       </div>
       <div className='flex items-center justify-between'>
-        <button aria-label="Back to home" onClick={() => navigate("/")} className='p-1 h-[40px] w-[40px] rounded-full flex items-center justify-center border-1 border-[#D2CFDF] '> <img  src={arrow} alt="arrow" height={16} width={16} /> </button>
+        <button aria-label="Back to home" onClick={() => navigate("/")} className='h-[40px] w-[40px] rounded-full flex justify-center items-center border-1 border-[#D2CFDF] '> <img className='mt-1 ml-1'  src={arrow} alt="arrow" height={24} width={24} /> </button>
         <Logo />
         <p className='text-[1.6rem] font-bold'><span className='text-secondary'>{activeQuestion + 1}</span>/{questions.length}</p>
       </div>

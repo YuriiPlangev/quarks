@@ -66,7 +66,7 @@ const GetResults = () => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder='example@gmail.com'
-          className={`rounded-[10px] w-full bg-[#E8E6EF] p-5 outline-none border transition-colors duration-300 ${
+          className={`rounded-[10px] w-full bg-[#E8E6EF] p-5 outline-none text-[1.6rem] border transition-colors duration-300 ${
             error
               ? 'border-[#EA6747]'
               : isFocused
