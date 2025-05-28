@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../components/blocks/Hero'
-import WhatIs from '../components/blocks/WhatIs'
+import Hero from '../components/blocks/HeroSection'
+import WhatIs from '../components/blocks/WhatIsSection'
 import Footer from '../components/blocks/Footer'
 import Logo from '../components/ui/Logo'
 

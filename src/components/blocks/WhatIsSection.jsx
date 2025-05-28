@@ -1,4 +1,4 @@
-import React from 'react'
+
 import WhatIsButton from '../buttons/WhatIsButton'
 import { useNavigate } from 'react-router-dom'
 const WhatIs = () => {
