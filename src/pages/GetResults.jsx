@@ -10,37 +10,38 @@ const GetResults = () => {
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
   const [isFocused, setIsFocused] = React.useState(false);
+  const [isTouched, setIsTouched] = React.useState(false);
 
   const validateEmail = (email) => {
-    if (!email) {
-      setError("Please enter an email");
-    } else if (!email.includes("@")) {
-      setError("Please enter a valid email");
-    } else {
-      setError("");
-    }
+    if (!email) return "Please enter an email";
+    if (!email.includes("@")) return "Please enter a valid email";
+    return "";
   };
 
   React.useEffect(() => {
-    if (!email) return;
-
+    if (!isTouched) return;
     const timer = setTimeout(() => {
-      validateEmail(email);
+      const result = validateEmail(email);
+      setError(result);
     }, 500);
     return () => clearTimeout(timer);
-  }, [email]);
+  }, [email, isTouched]);
 
   React.useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   const handleNavigate = () => {
-    if (!error && email) {
-      navigate("/takeplan");
-    } else {
+    const validationResult = validateEmail(email);
+    setIsTouched(true);
+    if (validationResult) {
+      setError(validationResult);
       inputRef.current.focus();
-      setError("Please enter a valid email");
+      return;
     }
+
+    setError("");
+    navigate("/takeplan");
   };
 
   return (
@@ -60,7 +61,10 @@ const GetResults = () => {
           type="text"
           name="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setIsTouched(true);
+          }}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="example@gmail.com"
