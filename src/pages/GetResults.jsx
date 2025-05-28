@@ -59,7 +59,7 @@ const GetResults = () => {
         className='flex flex-col gap-4 w-full'>
         <input
           ref={inputRef}
-          type="email"
+          type="text"
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
